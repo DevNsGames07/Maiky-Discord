@@ -1,0 +1,27 @@
+{
+  "name": "maiky-discord",
+  "version": "1.0.0",
+  "description": "Maiky is a Discord bot with a lot of commands and Dashboard. And it's for everyone for use.",
+  "homepage": "https://github.com/DevNsGames07/Maiky-Discord#readme",
+  "bugs": {
+    "url": "https://github.com/DevNsGames07/Maiky-Discord/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevNsGames07/Maiky-Discord.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@dotenvx/dotenvx": "^1.45.2",
+    "ascii-table": "^0.0.9",
+    "discord.js": "^14.21.0",
+    "dotenv": "^16.4.5",
+    "fs": "^0.0.1-security"
+  }
+}
