@@ -8,10 +8,6 @@ client.commands = new Collection();
 const { loadCommands } = require("./Handlers/cmd-handler")
 const { loadEvents } = require("./Handlers/event-handler")
 
-client.once('ready', async () => {
-    console.log(`${client.user.tag} was logged in and is ready for use!`);
-});
-
 client.login(process.env.TOKEN).then(() => {
     loadCommands(client);
     loadEvents(client);
