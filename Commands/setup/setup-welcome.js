@@ -52,8 +52,6 @@ module.exports = {
                 upsert: true
             }
         )
-
-
         let succesmessagewelcome = (i18next.t('setupwelcome'))
             .replace("<setwelcomechannel>", `**${welcomechannel}**`)
 
