@@ -35,5 +35,7 @@ module.exports = {
         Channel.send({  embeds: [botenterembed] })
         console.log(` Make a ${Channel.name} in ${guild.name} `)
 
+        
+
     }
 }
