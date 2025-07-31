@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder, MessageFlags } = require('discord.js');
 
 
 module.exports = {
@@ -13,7 +13,7 @@ module.exports = {
     .setFooter({ text: `Powered by ${client.user.username}`, iconURL: client.user.displayAvatarURL({ dynamic: true }) })
     .setTimestamp()
 
-    const sent = await interaction.reply({ embeds: [embedje], ephemeral: true })
+    const sent = await interaction.reply({ embeds: [embedje], flags: MessageFlags.Ephemeral })
 
     const embedje2 = new EmbedBuilder()
     .setColor("White")
@@ -21,7 +21,7 @@ module.exports = {
     .setFooter({ text: `Powered sby ${client.user.username}`, iconURL: client.user.displayAvatarURL({ dynamic: true }) })
     .setTimestamp()
 
-    interaction.editReply({ embeds: [embedje2], ephemeral: true });
+    interaction.editReply({ embeds: [embedje2], flags: MessageFlags.Ephemeral });
 
 
   },
