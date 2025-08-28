@@ -27,43 +27,44 @@ module.exports = {
     .setName('setup-language')
     .setDescription('Setup language for in you server!')
     .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
-    .addStringOption( option => 
-        option.setName('langauge')
-			.setDescription('Give you guild language')
-			.setRequired(true)
-			.addChoices(
-				{ name: 'Netherlands', value: 'Dutch' },
-				{ name: 'English', value: 'English' },
-				{ name: 'French', value: 'French' },
-        { name: 'Spanish', value: 'Spanish'}
-			)
+    .addStringOption(option =>
+      option.setName('langauge')
+        .setDescription('Give you guild language')
+        .setRequired(true)
+        .addChoices(
+          { name: 'Netherlands', value: 'Dutch' },
+          { name: 'English', value: 'English' },
+          { name: 'French', value: 'French' },
+          { name: 'Spanish', value: 'Spanish' }
+        )
     ),
   async execute(interaction, client) {
 
-        const { options, guildId } = interaction;
+    const { options, guildId, member } = interaction;
 
-        const data = await Language.findOne({ Guild: guildId });
-        const language = data && data.Language in i18next.options.resources ? data.Language : process.env.defaultLanguage;
-        i18next.changeLanguage(language);
+    const data = await Language.findOne({ Guild: guildId });
+    const language = data && data.Language in i18next.options.resources ? data.Language : process.env.defaultLanguage;
+    i18next.changeLanguage(language);
 
-        const languages = options.getString("langauge")
+    const languages = options.getString("langauge")
 
-        await Languageschema.findOneAndUpdate(
-            { Guild: guildId },
-            {
-                Language: languages.toLowerCase()
-            },
-            {
-                new: true,
-                upsert: true
-            }
-        )
 
-        const embedje2 = new EmbedBuilder()
-        .setColor("White")
-        .setDescription(`The bot language has been changed to **${languages}**`)
+    await Languageschema.findOneAndUpdate(
+      { Guild: guildId },
+      {
+        Language: languages.toLowerCase()
+      },
+      {
+        new: true,
+        upsert: true
+      }
+    )
 
-        await interaction.reply({ embeds: [embedje2] });
+    const embedje2 = new EmbedBuilder()
+      .setColor("White")
+      .setDescription(`The bot language has been changed to **${languages}**`)
+
+    await interaction.reply({ embeds: [embedje2] });
 
 
   },
