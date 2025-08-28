@@ -20,10 +20,17 @@
   "dependencies": {
     "@dotenvx/dotenvx": "^1.45.2",
     "ascii-table": "^0.0.9",
+    "axios": "^1.11.0",
+    "canvas": "^3.1.2",
+    "captcha-canvas": "^3.3.3",
+    "dbd-soft-ui": "^1.7.40-beta.1",
+    "discord-dashboard": "^2.3.62",
     "discord.js": "^14.21.0",
     "dotenv": "^16.4.5",
     "fs": "^0.0.1-security",
     "i18next": "^25.3.2",
-    "mongoose": "^8.16.2"
+    "mongoose": "^8.16.2",
+    "skia-canvas": "^2.0.2",
+    "tesseract.js": "^6.0.1"
   }
 }
