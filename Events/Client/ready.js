@@ -1,6 +1,5 @@
 const { Client, ActivityType } = require("discord.js")
 const mongoose = require("mongoose")
-
 module.exports = {
     name: "ready",
     once: true,
