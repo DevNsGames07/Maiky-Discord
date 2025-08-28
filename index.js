@@ -8,7 +8,6 @@ const client = new Client({ intents:
 });
 
 client.commands = new Collection();
-
 // Handler
 const { loadCommands } = require("./Handlers/cmd-handler")
 const { loadEvents } = require("./Handlers/event-handler")
